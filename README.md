@@ -1,4 +1,11 @@
+scrapping-pec1-tcvd
+PEC 1 para tipología y ciclo de vida de datos de la UOC
 Proyecto para descargar en un archivo CSV los datos de la calidad del aire en diferentes momentos de Espana.
 
-Hecho como primera PEC de la materia Tipologia y ciclo de vida de los datos del master de Ciencia de Datos de la Universidad Oberta de Catalunya.
+Integrantes
+Juan Carlos Juan Carlos Ghiringhelli Jueguen , jghiringhelli@uoc.edu
+Juan Pablo Botero Suaza, jboteros@uoc.edu
+
+Descripción de los ficheros
+
 
