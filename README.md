@@ -7,5 +7,3 @@ Juan Carlos Juan Carlos Ghiringhelli Jueguen , jghiringhelli@uoc.edu
 Juan Pablo Botero Suaza, jboteros@uoc.edu
 
 Descripción de los ficheros
-
-
