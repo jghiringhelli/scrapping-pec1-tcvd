@@ -32,7 +32,7 @@ class CsvPersistor:
         csv_file.close()
    
     
-    def __persist_header__(self, ):
+    def __persist_header__(self):
         data = ['region', 'hora_publicacion', 'estacion', 'ica', 'o3', 'no2', 'so2', 'pm25', 'pm10', 'co']
         with open("../data/" + self.output_file, 'a') as csv_file:
             writer = csv.writer(csv_file)
