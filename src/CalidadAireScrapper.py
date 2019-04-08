@@ -1,21 +1,18 @@
 import bs4
 
-from src.table.WebTable import WebTable
+from src import util
+from src.table.RegionTable import RegionTable
 
 
 class CalidadAireScrapper:
 
-    def __init__(self):
+    def __init__(self, pages_regiones):
         self.url = "http://www.eltiempo.es"
+        self.pages_regiones = pages_regiones
 
-    def scrap(self, pages_regiones):
-
+    def scrap(self, ):
         print 'Leyendo datos de paginas de regiones'
-
-        for page_region in pages_regiones:
+        for page_region in self.pages_regiones:
             bs = bs4.BeautifulSoup(page_region, 'html.parser')
-            region = bs.select_one('div.pollution_table > mod__table mod__table-responsive mod__table-pollution > tbody > tr > th').text
-            table_rows = bs.select('div.pollution_table > mod__table mod__table-responsive mod__table-pollution > tbody > tr > th.data_visible')
-            table_values = WebTable(region, table_rows)
-            print table_rows
-
+            region_table_tag = bs.select_one('div[id="pollution_table"]')
+            return RegionTable(region_table_tag)
