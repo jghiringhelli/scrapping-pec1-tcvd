@@ -1,6 +1,5 @@
 import bs4
 
-from src import util
 from src.table.RegionTable import RegionTable
 
 
@@ -12,7 +11,9 @@ class CalidadAireScrapper:
 
     def scrap(self, ):
         print 'Leyendo datos de paginas de regiones'
+        region_tables = []
         for page_region in self.pages_regiones:
             bs = bs4.BeautifulSoup(page_region, 'html.parser')
             region_table_tag = bs.select_one('div[id="pollution_table"]')
-            return RegionTable(region_table_tag)
+            region_tables.append(RegionTable(region_table_tag))
+        return region_tables

@@ -3,28 +3,29 @@ import csv
 
 class CsvPersistor:
 
-    def __init__(self, region_table, output_file):
-        self.region_table = region_table
+    def __init__(self, region_tables, output_file):
+        self.region_tables = region_tables
         self.output_file = output_file
 
     def persist(self):
         print 'Persistiendo datos en CSV de paginas de regiones'
-        region = self.region_table.region
-        hora = self.region_table.hora
-        estacion = self.region_table.estacion
-        for region_row in self.region_table.region_rows:
-            self.__persist_row__(region, hora, estacion, region_row)
+        for region_table in self.region_tables:
+            region = region_table.region.encode('utf-8')
+            hora = region_table.hora.encode('utf-8')
+            estacion = region_table.estacion.encode('utf-8')
+            for region_row in region_table.region_rows:
+                self.__persist_row__(region, hora, estacion, region_row)
 
     def __persist_row__(self, region, hora, estacion, region_row):
-        ICA = region_row.ICA
-        O3 = region_row.O3
-        NO2 = region_row.NO2
-        SO2 = region_row.SO2
-        pm25 = region_row.pm25
-        pm10 = region_row.pm10
-        co = region_row.co
+        ICA = region_row.ICA.encode('utf-8')
+        O3 = region_row.O3.encode('utf-8')
+        NO2 = region_row.NO2.encode('utf-8')
+        SO2 = region_row.SO2.encode('utf-8')
+        pm25 = region_row.pm25.encode('utf-8')
+        pm10 = region_row.pm10.encode('utf-8')
+        co = region_row.co.encode('utf-8')
         data = [region, hora, estacion, ICA, O3, NO2, SO2, pm25, pm10, co]
         with open("../data/" + self.output_file, 'a') as csv_file:
-            writer = csv.writer(csv_file, delimiter=' ', quotechar='|')
+            writer = csv.writer(csv_file)
             writer.writerow(data)
         csv_file.close()
