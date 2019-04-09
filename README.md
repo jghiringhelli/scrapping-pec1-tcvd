@@ -4,6 +4,7 @@ Practica I: Web Scraping**
 
 Proyecto en python para descargar en un archivo CSV los datos de la calidad del aire para diferentes regiones de España a partir del sitio web *https://www.eltiempo.es/calidad-aire*    
 
+
 **Integrantes**  
 Juan Carlos Ghiringhelli Jueguen , jghiringhelli@uoc.edu  
 Juan Pablo Botero Suaza, jboteros@uoc.edu  
