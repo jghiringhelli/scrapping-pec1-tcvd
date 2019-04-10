@@ -16,8 +16,8 @@ class CsvPersistor:
 
     def __persist_row__(self, region,region_row):
         ICA = region_row.ICA
-        hora=  region_row.hora
-        estacion=  region_row.estacion
+        hora= region_row.hora
+        estacion= region_row.estacion
         O3 = region_row.O3
         NO2 = region_row.NO2
         SO2 = region_row.SO2
