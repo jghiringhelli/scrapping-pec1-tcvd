@@ -14,3 +14,5 @@ Juan Pablo Botero Suaza, jboteros@uoc.edu
 **data**: contiene el archivo de salida calidad_aire.csv, como parte de la ejecución del web scraper.  
 **docs**: archivo .pdf con respuesta a las preguntas relacionadas en la práctica I.  
 **src**: código fuente del web scraper en python.  
+
+**Nota**: La version de python utilizada para el entorno de ejecución es *Python 3.7.3*.
