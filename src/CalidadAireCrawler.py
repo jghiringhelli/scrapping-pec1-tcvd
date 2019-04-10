@@ -1,5 +1,6 @@
-import urllib2
+import urllib.request
 import bs4
+
 
 
 class CalidadAireCrawler:
@@ -11,10 +12,10 @@ class CalidadAireCrawler:
 
     def __get_main_page__(self, url, num_retries):
         try:
-            response = urllib2.urlopen(url)
+            response = urllib.request.urlopen(url)
             page = response.read()
-        except urllib2.URLError as e:
-            print 'Download error:', e.reason
+        except urllib.error.URLError as e:
+            print ('Download error:', e.reason)
             page = None
             if num_retries > 0:
                 if hasattr(e, 'code') and 500 <= e.code < 600:
@@ -31,8 +32,8 @@ class CalidadAireCrawler:
 
     def __create_link_region__(self, row):
         linkRegion = row['href']
-        region = row.span.span.text.rstrip()
-        print 'Encontrado link para region ' + region + " " + linkRegion
+        region =row.span.find(text=True, recursive=False).strip()
+        print ('Encontrado link para region ' + region + " " + linkRegion)
         return linkRegion
 
     def __get_pages_regiones(self, links_regiones):
@@ -43,7 +44,7 @@ class CalidadAireCrawler:
 
     def crawl(self):
 
-        print 'Cargando pagina principal'
+        print ('Cargando pagina principal')
 
         paginaPrincipal = self.__get_main_page__(self.url + self.subdomain, self.min_retries)
         linksRegiones = self.__parse_main_page__(paginaPrincipal)
