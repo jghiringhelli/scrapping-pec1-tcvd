@@ -12,23 +12,22 @@ class CsvPersistor:
         self.__persist_header__()
         # Por cada region
         for region_table in self.region_tables:
-            region = region_table.region
+            region = region_table.region.encode('utf-8')
             # Guardando datos de cade estacion, filas del CSV
             for region_row in region_table.region_rows:
                 self.__persist_row__(region, region_row)
 
     def __persist_row__(self, region, region_row):
-        ICA = region_row.ICA
-        hora = region_row.hora
-        estacion = region_row.estacion
-        O3 = region_row.O3
-        NO2 = region_row.NO2
-        SO2 = region_row.SO2
-        pm25 = region_row.pm25
-        pm10 = region_row.pm10
-        co = region_row.co
+        ICA = region_row.ICA.encode('utf-8')
+        hora = region_row.hora.encode('utf-8')
+        estacion = region_row.estacion.encode('utf-8')
+        O3 = region_row.O3.encode('utf-8')
+        NO2 = region_row.NO2.encode('utf-8')
+        SO2 = region_row.SO2.encode('utf-8')
+        pm25 = region_row.pm25.encode('utf-8')
+        pm10 = region_row.pm10.encode('utf-8')
+        co = region_row.co.encode('utf-8')
         data = [region, hora, estacion, ICA, O3, NO2, SO2, pm25, pm10, co]
-        [x.encode('utf-8') for x in data]
         # Anexar datos a planilla existente
         with open("../data/" + self.output_file, 'a') as csv_file:
             writer = csv.writer(csv_file)
