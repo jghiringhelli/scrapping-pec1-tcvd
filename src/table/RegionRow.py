@@ -18,6 +18,7 @@ class RegionRow:
         if self.region_row_tag.select_one(column + ' span[class="info value_null"]'):
             return ''
         return util.cleantext(self.region_row_tag.select_one(column + ' ' + value).text.rstrip())
-     
+
+    # Limpiando los caracteres especiales como tabuladores y salto de carril, y espacios en blanco antes y despues de los datos
     def __get_estacion__(self, region_row_tag):   
         return util.cleantext(region_row_tag.td.find(text=True, recursive=False).strip())

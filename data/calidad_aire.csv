@@ -448,3 +448,5 @@ Zaragoza,00:00del10/04/2019,JAIMEFERRÁN,39,83.38ug/m3,10.88ug/m3,6.09ug/m3,,,160
 Zaragoza,00:00del10/04/2019,LASFUENTES,38,81.56ug/m3,12.57ug/m3,6.73ug/m3,,4.58ug/m3,160ug/m3
 Zaragoza,00:00del10/04/2019,RENOVALES,36,77.44ug/m3,12.71ug/m3,2.53ug/m3,,6.91ug/m3,120ug/m3
 Zaragoza,01:00del10/04/2019,ROGERDEFLOR,39,83.35ug/m3,8.39ug/m3,2.37ug/m3,,14.9ug/m3,170ug/m3
+region,hora_publicacion,estacion,ica,o3,no2,so2,pm25,pm10,co
+region,hora_publicacion,estacion,ica,o3,no2,so2,pm25,pm10,co
