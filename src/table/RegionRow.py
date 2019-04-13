@@ -4,7 +4,7 @@ from src import util
 class RegionRow:
     def __init__(self, region_row_tag):
         self.region_row_tag = region_row_tag
-        self.hora = util.cleantext(self.__get_value__('td[data-visible]','span[class="time"]'))
+        self.hora = self.__get_value__('td[data-visible]','span[class="time"]')
         self.estacion = self.__get_estacion__(self.region_row_tag)
         self.ICA = self.__get_value__('td[data-visible]', 'span[class*="aqi aqi"]')
         self.O3 = self.__get_value__('td[data-title="O3"]', 'span[class="data"]')
