@@ -1,5 +1,5 @@
 import csv
-
+import os.path
 
 class CsvPersistor:
 
@@ -28,7 +28,7 @@ class CsvPersistor:
         pm10 = region_row.pm10.encode('utf-8')
         co = region_row.co.encode('utf-8')
         data = [region, hora, estacion, ICA, O3, NO2, SO2, pm25, pm10, co]
-        # Anexar datos a planilla existente
+        # Anexar datos a planilla csv
         with open("../data/" + self.output_file, 'a') as csv_file:
             writer = csv.writer(csv_file)
             writer.writerow(data)
@@ -37,9 +37,10 @@ class CsvPersistor:
     def __persist_header__(self):
         data = ['region', 'hora_publicacion', 'estacion', 'ica', 'o3', 'no2', 'so2', 'pm25', 'pm10', 'co']
         [x.encode('utf-8') for x in data]
-        with open("../data/" + self.output_file, 'a') as csv_file:
-            # Si el archivo existe no se agrega el cabezal
-            if not csv_file:
-                writer = csv.writer(csv_file)
-                writer.writerow(data)
-        csv_file.close()
+            # Si el archivo existe no se agrega el encabezado
+        if not os.path.isfile("../data/" + self.output_file):
+                with open("../data/" + self.output_file, 'a') as csv_file:
+                    writer = csv.writer(csv_file)
+                    writer.writerow(data)
+                    csv_file.close()
+
