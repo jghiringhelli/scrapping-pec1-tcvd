@@ -14,3 +14,5 @@ Juan Pablo Botero Suaza, jboteros@uoc.edu
 **data**: contiene el archivo de salida *calidad_aire.csv*, como parte de la ejecución del web scraper.  
 **docs**: archivo .pdf con respuesta a las preguntas relacionadas en la práctica I.  
 **src**: código fuente del web scraper en python, el archivo *main.py* contiene las instrucciones para la ejecución del scraper y la generacion del archivo .csv .  
+
+**Wiki**: https://github.com/jghiringhelli/scrapping-pec1-tcvd/wiki/Web-Scraping
