@@ -1,9 +1,8 @@
 import time
 
 from src.persist.CsvPersistor import CsvPersistor
-
-from CalidadAireCrawler import CalidadAireCrawler
-from CalidadAireScrapper import CalidadAireScrapper
+from src.CalidadAireCrawler import CalidadAireCrawler
+from src.CalidadAireScrapper import CalidadAireScrapper
 from src.RobotsChecker import RobotsChecker
 
 print 'Scraping datos de calidad de aire de Espana'
